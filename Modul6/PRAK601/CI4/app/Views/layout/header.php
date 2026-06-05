@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
         :root {
             --red: #8B0000;
             --red-light: #a00000;
@@ -86,5 +85,4 @@
     </ul>
     <div></div>
 </nav>
-
 <main>
