@@ -11,7 +11,6 @@ class BukuModel extends Model
     protected $allowedFields = ['judul', 'penulis', 'penerbit', 'tahun_terbit'];
     protected $useTimestamps = true;
 
-    // Aturan validasi (custom pesan bahasa Indonesia)
     protected $validationRules = [
         'judul'        => 'required|alpha_numeric_punct',
         'penulis'      => 'required|alpha_numeric_punct',

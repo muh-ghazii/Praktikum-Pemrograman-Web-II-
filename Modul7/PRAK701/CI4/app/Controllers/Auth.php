@@ -13,10 +13,8 @@ class Auth extends BaseController
         $this->userModel = new UserModel();
     }
 
-    // ── Tampilkan halaman login ──────────────────────────────
     public function login(): string
     {
-        // Kalau sudah login, langsung redirect ke daftar buku
         if (session()->get('user_id')) {
             return redirect()->to('/buku');
         }
@@ -26,18 +24,13 @@ class Auth extends BaseController
      . view('templates/footer');
     }
 
-    // ── Proses form login ────────────────────────────────────
     public function prosesLogin()
     {
         $username = $this->request->getPost('username');
         $password = $this->request->getPost('password');
-
-        // Cari user berdasarkan username
         $user = $this->userModel->where('username', $username)->first();
 
-        // Cek apakah user ada & password cocok
         if ($user && password_verify($password, $user['password'])) {
-            // Simpan data ke session
             session()->set([
                 'user_id'  => $user['id'],
                 'username' => $user['username'],
@@ -46,13 +39,10 @@ class Auth extends BaseController
             ]);
             return redirect()->to('/buku');
         }
-
-        // Login gagal
         session()->setFlashdata('error', 'Username atau password salah!');
         return redirect()->to('/login');
     }
 
-    // ── Logout ───────────────────────────────────────────────
     public function logout()
     {
         session()->destroy();

@@ -1,6 +1,4 @@
 <div class="container py-4" style="max-width:640px;">
-
-    <!-- Back -->
     <a href="/buku" class="text-decoration-none d-flex align-items-center gap-1 mb-3"
        style="color:var(--text-muted); font-size:.88rem; font-weight:500;">
         <i class="bi bi-arrow-left"></i> Kembali ke Daftar Buku
@@ -13,8 +11,6 @@
     <div class="card-custom p-4">
         <form action="/buku/store" method="POST">
             <?= csrf_field() ?>
-
-            <!-- Judul -->
             <div class="mb-3">
                 <label class="form-label">Judul Buku <span style="color:var(--primary)">*</span></label>
                 <input type="text" name="judul"
@@ -28,7 +24,6 @@
                 <?php endif; ?>
             </div>
 
-            <!-- Penulis -->
             <div class="mb-3">
                 <label class="form-label">Penulis <span style="color:var(--primary)">*</span></label>
                 <input type="text" name="penulis"
@@ -42,7 +37,6 @@
                 <?php endif; ?>
             </div>
 
-            <!-- Penerbit -->
             <div class="mb-3">
                 <label class="form-label">Penerbit <span style="color:var(--primary)">*</span></label>
                 <input type="text" name="penerbit"
@@ -56,7 +50,6 @@
                 <?php endif; ?>
             </div>
 
-            <!-- Tahun Terbit -->
             <div class="mb-4">
                 <label class="form-label">Tahun Terbit <span style="color:var(--primary)">*</span></label>
                 <input type="number" name="tahun_terbit"
@@ -74,7 +67,6 @@
                 <?php endif; ?>
             </div>
 
-            <!-- Buttons -->
             <div class="d-flex gap-2">
                 <button type="submit" class="btn btn-primary-custom px-4 py-2 flex-fill">
                     <i class="bi bi-save me-2"></i>Simpan
@@ -83,7 +75,6 @@
                     Batal
                 </a>
             </div>
-
         </form>
     </div>
 </div>

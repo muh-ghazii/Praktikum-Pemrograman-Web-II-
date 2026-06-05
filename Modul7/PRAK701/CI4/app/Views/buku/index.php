@@ -1,5 +1,4 @@
 <div class="container py-4">
-
     <?php if (session()->getFlashdata('success')): ?>
     <div class="alert alert-success-custom d-flex align-items-center gap-2 mb-4 p-3">
         <i class="bi bi-check-circle-fill"></i>
@@ -7,7 +6,6 @@
     </div>
     <?php endif; ?>
 
-    <!-- Header -->
     <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-3">
         <div>
             <h4 class="fw-bold mb-1" style="font-family:'Hanken Grotesk',sans-serif;">
@@ -20,7 +18,6 @@
         </a>
     </div>
 
-    <!-- DESKTOP: Tabel -->
     <div class="card-custom overflow-hidden d-none d-md-block">
         <div class="table-responsive">
             <table class="table table-custom mb-0">
@@ -77,7 +74,6 @@
         <?php endif; ?>
     </div>
 
-    <!-- MOBILE: Card layout -->
     <div class="d-md-none">
         <?php if (empty($buku)): ?>
         <div class="card-custom p-4 text-center text-muted">

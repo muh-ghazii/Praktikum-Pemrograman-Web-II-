@@ -2,8 +2,6 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-sm-9 col-md-6 col-lg-4">
-
-                <!-- Flash warning -->
                 <?php if (session()->getFlashdata('warning')): ?>
                 <div class="alert alert-warning-custom d-flex align-items-center gap-2 mb-3 p-3">
                     <i class="bi bi-exclamation-triangle-fill"></i>
@@ -25,7 +23,6 @@
                 </div>
                 <?php endif; ?>
 
-                <!-- Card Login -->
                 <div class="card-custom p-4 p-md-5">
                     <div class="text-center mb-4">
                         <div class="mx-auto mb-3 d-flex align-items-center justify-content-center"
@@ -38,7 +35,6 @@
 
                     <form action="/login" method="POST">
                         <?= csrf_field() ?>
-
                         <div class="mb-3">
                             <label class="form-label">Username</label>
                             <div class="input-group">

@@ -13,7 +13,6 @@ class Buku extends BaseController
         $this->bukuModel = new BukuModel();
     }
 
-    // ── READ - Tampilkan semua buku ──────────────────────────
     public function index(): string
     {
         $data = [
@@ -21,13 +20,11 @@ class Buku extends BaseController
             'active' => 'buku',
             'buku'   => $this->bukuModel->orderBy('created_at', 'DESC')->findAll(),
         ];
-
         return view('templates/header', $data)
              . view('buku/index', $data)
              . view('templates/footer');
     }
 
-    // ── CREATE - Tampilkan form tambah ───────────────────────
     public function create(): string
     {
         $data = [
@@ -35,13 +32,11 @@ class Buku extends BaseController
             'active'     => 'buku',
             'validation' => \Config\Services::validation(),
         ];
-
         return view('templates/header', $data)
              . view('buku/create', $data)
              . view('templates/footer');
     }
 
-    // ── CREATE - Proses simpan buku baru ─────────────────────
     public function store()
     {
         $rules = [
@@ -50,7 +45,6 @@ class Buku extends BaseController
             'penerbit'     => 'required|alpha_numeric_punct',
             'tahun_terbit' => 'required|numeric|greater_than[1800]|less_than[2024]',
         ];
-
         $messages = [
             'judul' => [
                 'required'            => 'Judul buku harus diisi.',
@@ -82,7 +76,6 @@ class Buku extends BaseController
                  . view('buku/create', $data)
                  . view('templates/footer');
         }
-
         $this->bukuModel->save([
             'judul'        => $this->request->getPost('judul'),
             'penulis'      => $this->request->getPost('penulis'),
@@ -94,28 +87,23 @@ class Buku extends BaseController
         return redirect()->to('/buku');
     }
 
-    // ── UPDATE - Tampilkan form edit ─────────────────────────
     public function edit(int $id): string
     {
         $buku = $this->bukuModel->find($id);
-
         if (! $buku) {
             throw new \CodeIgniter\Exceptions\PageNotFoundException("Buku dengan ID $id tidak ditemukan.");
         }
-
         $data = [
             'title'      => 'Edit Buku | PRAK701',
             'active'     => 'buku',
             'buku'       => $buku,
             'validation' => \Config\Services::validation(),
         ];
-
         return view('templates/header', $data)
              . view('buku/edit', $data)
              . view('templates/footer');
     }
 
-    // ── UPDATE - Proses simpan perubahan ─────────────────────
     public function update(int $id)
     {
         $rules = [
@@ -124,7 +112,6 @@ class Buku extends BaseController
             'penerbit'     => 'required|alpha_numeric_punct',
             'tahun_terbit' => 'required|numeric|greater_than[1800]|less_than[2024]',
         ];
-
         $messages = [
             'judul' => [
                 'required'            => 'Judul buku harus diisi.',
@@ -164,12 +151,10 @@ class Buku extends BaseController
             'penerbit'     => $this->request->getPost('penerbit'),
             'tahun_terbit' => $this->request->getPost('tahun_terbit'),
         ]);
-
         session()->setFlashdata('success', 'Buku berhasil diperbarui!');
         return redirect()->to('/buku');
     }
 
-    // ── DELETE ───────────────────────────────────────────────
     public function delete(int $id)
     {
         $this->bukuModel->delete($id);

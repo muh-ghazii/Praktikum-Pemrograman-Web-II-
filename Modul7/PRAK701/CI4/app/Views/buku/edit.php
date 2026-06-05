@@ -12,7 +12,6 @@
     <div class="card-custom p-4">
         <form action="/buku/update/<?= $buku['id'] ?>" method="POST">
             <?= csrf_field() ?>
-
             <div class="mb-3">
                 <label class="form-label">Judul Buku <span style="color:var(--primary)">*</span></label>
                 <input type="text" name="judul"
@@ -73,7 +72,6 @@
                     Batal
                 </a>
             </div>
-
         </form>
     </div>
 </div>

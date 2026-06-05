@@ -28,8 +28,6 @@
             color: var(--text);
             min-height: 100vh;
         }
-
-        /* ── Navbar ── */
         .navbar-custom {
             background: #fff;
             border-bottom: 3px solid var(--primary);
@@ -79,16 +77,12 @@
             background: var(--primary);
             color: #fff;
         }
-
-        /* ── Cards ── */
         .card-custom {
             background: #fff;
             border: 1px solid var(--border);
             border-radius: 12px;
             box-shadow: 0 2px 8px rgba(0,0,0,.05);
         }
-
-        /* ── Buttons ── */
         .btn-primary-custom {
             background: var(--primary);
             border: none;
@@ -107,8 +101,6 @@
             font-weight: 600;
         }
         .btn-outline-primary-custom:hover { background: var(--primary); color: #fff; }
-
-        /* ── Table ── */
         .table-custom thead th {
             background: #fff;
             color: var(--text-muted);
@@ -125,8 +117,6 @@
             border-bottom: 1px solid #f0f0f0;
         }
         .table-custom tbody tr:hover { background: #fff5f5; }
-
-        /* ── Form ── */
         .form-control-custom {
             border: 1.5px solid var(--border);
             border-radius: 8px;
@@ -140,8 +130,6 @@
             outline: none;
         }
         .form-label { font-size: .85rem; font-weight: 600; color: var(--text); }
-
-        /* ── Badge tahun ── */
         .badge-year {
             background: #f0f0f0;
             color: var(--text-muted);
@@ -150,8 +138,6 @@
             border-radius: 6px;
             font-weight: 500;
         }
-
-        /* ── Action buttons ── */
         .btn-edit {
             background: transparent;
             border: 1.5px solid var(--primary);
@@ -175,14 +161,10 @@
             transition: all .2s;
         }
         .btn-delete:hover { background: #ff4444; border-color: #ff4444; color: #fff; }
-
-        /* ── Pagination ── */
         .pagination-info {
             font-size: .82rem;
             color: var(--text-muted);
         }
-
-        /* ── Alert ── */
         .alert-success-custom {
             background: #fff5f5;
             border: 1px solid #ffcccc;
@@ -210,29 +192,15 @@
             margin-top: .25rem;
         }
 
-        /* ── Mobile responsive ── */
 @media (max-width: 768px) {
     .navbar-brand { font-size: .85rem; }
     .container { padding-left: 1rem; padding-right: 1rem; }
-
-    /* Table scroll horizontal */
     .table-responsive { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-
-    /* Sembunyikan kolom penerbit di hp kecil */
     .hide-mobile { display: none !important; }
-
-    /* Form full width */
-    .card-custom { border-radius: 8px; }
-
-    /* Tombol full width di mobile */
-    .d-flex.gap-2 .btn-primary-custom,
+    .card-custom { border-radius: 8px; }    .d-flex.gap-2 .btn-primary-custom,
     .d-flex.gap-2 .btn-outline-primary-custom { flex: 1; }
-
-    /* Header tabel lebih kecil */
     .table-custom thead th { font-size: .7rem; padding: .6rem .5rem !important; }
     .table-custom td { font-size: .82rem; padding: .6rem .5rem !important; }
-
-    /* Footer teks kecil */
     footer .container { flex-direction: column; gap: .3rem; text-align: center; }
 }
 
@@ -245,7 +213,6 @@
 <body style="min-height:100vh; display:flex; flex-direction:column;">
 <div style="flex:1;">
 
-<!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
     <div class="container">
         <a class="navbar-brand" href="/buku">
@@ -258,7 +225,6 @@
             <i class="bi bi-list fs-5" style="color:var(--primary)"></i>
         </button>
         <div class="collapse navbar-collapse" id="navMenu">
-            <!-- Divider di mobile -->
             <hr class="d-lg-none my-2" style="border-color:#f0f0f0;">
             <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
                 <?php if (session()->get('isLogged')): ?>
